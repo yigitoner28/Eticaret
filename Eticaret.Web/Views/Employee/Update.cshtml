@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Employee Güncelleme";
+}
+@model Employee
+
+<h1> Employee Güncelleme </h1>
+<br />
+<div class="row">
+
+    <form asp-action="Update" asp-controller="Employee" method="post">
+        <input  type="hidden" asp-for="EmployeeId"/>
+        
+       
+        <div class="form-group">
+            <label asp-for="EmployeeName"></label>
+            <input asp-for="EmployeeName" type="text" class="form-control" />
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeLastname"></label>
+            <input asp-for="EmployeeLastname" type="text" class="form-control" />
+            <span asp-validation-for="EmployeeLastname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeUserName"></label>
+            <input asp-for="EmployeeUserName" type="text" class="form-control" />
+            <span asp-validation-for="EmployeeUserName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeEmail"></label>
+            <input asp-for="EmployeeEmail" type="text" class="form-control" />
+            <span asp-validation-for="EmployeeEmail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeStatu"></label>
+            <input asp-for="EmployeeStatu" type="text" class="form-control" />
+            <span asp-validation-for="EmployeeStatu" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="StartDate"></label>
+            <input asp-for="StartDate" type="text" class="form-control" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RoleId"></label>
+            <input asp-for="RoleId" type="text" class="form-control" />
+            <span asp-validation-for="RoleId" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group mt-2">
+            <input type="submit" class="btn-primary" value="Kaydet" />
+        </div>
+    </form>
+</div>

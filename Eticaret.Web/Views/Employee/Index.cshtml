@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Employee>
+
+<h2> Employees </h2>
+<br />
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>EmployeeName</th>
+            <th>EmployeeLastname</th>
+            <th>EmployeeUserName</th>
+            <th>EmployeeEmail</th>
+            <th>EmployeeStatu</th>
+            <th>StartDate</th>
+            <th>RoleId</th>
+            
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.EmployeeLastname</td>
+                <td>@employee.EmployeeUserName</td>
+                <td>@employee.EmployeeEmail</td>
+                <td>@employee.EmployeeStatu</td>
+                <td>@employee.StartDate</td>
+                <td>@employee.RoleId</td>
+                
+
+
+                <td>
+                    <a class="btn btn-danger" asp-controller="Employee" asp-action="Delete" asp-route-id="@employee.EmployeeId"> Silme</a>&nbsp;
+                    <a class="btn btn-secondary" asp-controller="Employee" asp-action="Update" asp-route-id="@employee.EmployeeId"> Güncelle</a>&nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary " asp-area="" asp-controller="Employee" asp-action="Add">Ekle</a>

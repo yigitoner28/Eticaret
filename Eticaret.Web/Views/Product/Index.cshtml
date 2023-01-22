@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+@model List<Product>
+
+<h2> Products </h2>
+<br />
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>ProductCode</th>
+            <th>ProductDescription</th>
+            <th>SubCategoryId</th>
+            <th>BrandId</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.ProductCode</td>
+                <td>@product.ProductDescription</td>
+                <td>@product.SubCategoryId</td>
+                <td>@product.BrandId</td>
+
+                <td>
+                    <a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@product.ProductId"> Silme</a>&nbsp;
+                    <a class="btn btn-secondary" asp-controller="Product" asp-action="Update" asp-route-id="@product.ProductId"> Güncelle</a>&nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary " asp-area="" asp-controller="Product" asp-action="Add">Ekle</a>
